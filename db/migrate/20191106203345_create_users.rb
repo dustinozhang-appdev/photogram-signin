@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.boolean :private
       t.integer :likes_count
       t.integer :comments_count
-
       t.timestamps
     end
   end

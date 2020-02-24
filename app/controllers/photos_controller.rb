@@ -5,7 +5,12 @@ class PhotosController < ApplicationController
   end
 
   def create
-    user_id = params.fetch("input_owner_id")
+    user_id = nil
+    if (session[:current_user_id] == nil)
+      user_id = params.fetch("input_owner_id")
+    else
+      user_id = session[:current_user_id]
+    end
     image = params.fetch("input_image")
     caption = params.fetch("input_caption")
     photo = Photo.new

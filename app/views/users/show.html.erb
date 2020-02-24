@@ -1,3 +1,8 @@
+<% if @justcreated != nil %>
+  <div style ="border:thin green solid; color: green">
+    <%= "Welcome, " + @user.username + "!" %>
+  </div>
+<% end %>
 <h1><%= @user.username %></h1>
 
 <dl>

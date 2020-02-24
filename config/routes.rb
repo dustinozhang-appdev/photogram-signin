@@ -4,12 +4,20 @@ Rails.application.routes.draw do
 
   # User routes
 
+  # LOGINS
+  get("/user_sign_in", { :controller => "users", :action => "sign_in" })
+  get("/user_sign_up", { :controller => "users", :action => "sign_up" })
+  get("/user_sign_out", { :controller => "users", :action => "sign_out" })
+  get("/create_credentials", { :controller => "users", :action => "create_credentials" })
+  get("/verify_credentials", { :controller => "users", :action => "verify_credentials" })    
+
   # CREATE
   get("/insert_user_record", {:controller => "users", :action => "create" })
 
   # READ
   get("/users", {:controller => "users", :action => "index"})
   get("/users/:the_username", {:controller => "users", :action => "show"})
+  
 
   # UPDATE
   get("/update_user/:the_user_id", {:controller => "users", :action => "update" })

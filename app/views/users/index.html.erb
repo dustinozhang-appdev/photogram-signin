@@ -1,13 +1,17 @@
+<!DOCTYPE html>
+<html>
+<% if @justsignedout != nil %>
+  <div style ="border:thin green solid; color: green">
+    See ya later!
+  </div>
+<% end %>
+<% if @justsignedin != nil %>
+  <div style ="border:thin green solid; color: green">
+    <%= "Welcome back, " + User.where({:id => session[:current_user_id]})[0].username + "!" %>
+  </div>
+<% end %>
+
 <h1>List of users</h1>
-
-<form action="/insert_user_record">
-  <label for="browser_username">Username</label>
-  <input id="browser_username" type="text" name="input_username" placeholder="Enter a username...">
-
-  <button>Add user</button>
-</form>
-
-<hr>
 
 <table border="1">
   <tr>
@@ -39,3 +43,5 @@
   
   <% end %>
 </table>
+
+</html>
